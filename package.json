@@ -1,0 +1,26 @@
+{
+  "name": "yodlr-metrics",
+  "version": "1.0.0",
+  "description": "Backend agnostic metric library that pulls config from env/etcd",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "npm run jscs && ./node_modules/.bin/mocha",
+    "jscs": "./node_modules/.bin/yodlr-standard"
+  },
+  "standard": {
+    "ignore": [
+      "node_modules/**",
+      "test/**"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^2.1.0",
+    "should": "^5.0.0",
+    "yodlr-standard": "^10.1.0"
+  },
+  "dependencies": {
+    "eventemitter3": "^0.1.6"
+  }
+}
