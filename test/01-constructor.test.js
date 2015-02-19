@@ -357,10 +357,10 @@ describe('01 Constructor', function() {
       });
     });
 
-    describe('timer', function() {
-      it('should expose timer function', function() {
+    describe('createTimer', function() {
+      it('should expose createTimer function', function() {
         should.exist(metric.count);
-        metric.timer.should.be.an.instanceof(Function);
+        metric.createTimer.should.be.an.instanceof(Function);
       });
 
       it('calling without params should emit error', function(done) {
@@ -370,7 +370,7 @@ describe('01 Constructor', function() {
           err.message.should.containEql('Metric must exist and be a string');
           done();
         });
-        metric.timer();
+        metric.createTimer();
       });
 
       it('calling with non-string metric should emit error', function(done) {
@@ -380,7 +380,7 @@ describe('01 Constructor', function() {
           err.message.should.containEql('Metric must exist and be a string');
           done();
         });
-        metric.timer(123);
+        metric.createTimer(123);
       });
 
       it('calling with non-number sample should emit error', function(done) {
@@ -390,11 +390,11 @@ describe('01 Constructor', function() {
           err.message.should.containEql('Sample is optional but must be a number');
           done();
         });
-        metric.timer('my.metric', 'sample');
+        metric.createTimer('my.metric', 'sample');
       });
 
-      it('should return timer with stop() function', function() {
-        var timer = metric.timer('my.timer');
+      it('should return createTimer with stop() function', function() {
+        var timer = metric.createTimer('my.timer');
         should.exist(timer);
         should.exist(timer.stop);
         timer.stop.should.be.an.instanceof(Function);

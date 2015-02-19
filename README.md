@@ -28,6 +28,7 @@ var opts = {
   on_error: function errorHandler(err) { // if not defined, will emit 'error' instead
     console.log(err);
   }
+}
 ```
 
 #### Pull host/port and prefix from etcd.
@@ -107,7 +108,7 @@ metric.timing('user.ping_latency', 50); // sends timing metric of 50ms
 Variation on the timing metric which provides a timing object with a Stop() function
 
 ```javascript
-var timer = metric.timer('user.ping_latency');
+var timer = metric.createTimer('user.ping_latency');
 setTimeout(function() {
   timer.stop(); // sends timing metric from when object was created
 }, 50);
