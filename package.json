@@ -26,6 +26,7 @@
   "dependencies": {
     "eventemitter3": "^0.1.6",
     "lodash": "^3.2.0",
-    "lynx": "^0.2.0"
+    "lynx": "^0.2.0",
+    "node-etcd": "^3.0.2"
   }
 }

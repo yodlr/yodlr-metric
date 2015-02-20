@@ -40,8 +40,8 @@ emit an error which you should capture and probably log.
 
 ```javascript
 var opts = {
-  etcd_host: '172.17.42.1', // default, optional
-  etcd_port: 4001, // default, optional
+  etcdHost: '172.17.42.1', // default, optional
+  etcdPort: 4001, // default, optional
   prefix: 'services.myapp', // optional
   statsd: {
     prefix_etcd: '/services/statsd/prefix', // optional

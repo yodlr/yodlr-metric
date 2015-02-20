@@ -1,6 +1,5 @@
 var should = require('should');
 var YodlrMetric = require('../');
-
 describe('01 Constructor', function() {
   this.timeout(50);
 
