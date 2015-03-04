@@ -97,6 +97,15 @@ describe('02 statsd static', function() {
       metric.count(m, -5);
     });
 
+    it('should support count of 0', function(done) {
+      s.once('message', function(msg) {
+        msg = msg.toString();
+        msg.should.eql(m + ':0|c');
+        done();
+      });
+      metric.count(m, 0);
+    });
+
     it('should support sampling counts', function(done) {
       s.once('message', function(msg) {
         msg = msg.toString();
@@ -242,6 +251,15 @@ describe('02 statsd static', function() {
       metric.gauge(m, -50);
     });
 
+    it('should support zero count', function(done) {
+      s.once('message', function(msg) {
+        msg = msg.toString();
+        msg.should.eql(m + ':0|g');
+        done();
+      });
+      metric.gauge(m, 0);
+    });
+
     it('should support sampling counts', function(done) {
       s.once('message', function(msg) {
         msg = msg.toString();
@@ -274,6 +292,15 @@ describe('02 statsd static', function() {
         done();
       });
       metric.set(m, -50);
+    });
+
+    it('should support zero', function(done) {
+      s.once('message', function(msg) {
+        msg = msg.toString();
+        msg.should.eql(m + ':0|s');
+        done();
+      });
+      metric.set(m, 0);
     });
 
     it('should support strings', function(done) {
