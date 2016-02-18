@@ -1,6 +1,6 @@
 {
   "name": "yodlr-metrics",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Backend agnostic metric library that pulls config from env/etcd",
   "main": "lib/index.js",
   "scripts": {
